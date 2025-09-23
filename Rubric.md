@@ -108,12 +108,6 @@ Upon completion, the student will be able to:
 - Security and performance considerations
 - Innovation in combining multiple analysis sources
 
-### **Business Viability**
-- Clear value proposition and market opportunity
-- Realistic revenue model and pricing strategy
-- Competitive differentiation and positioning
-- Evidence of market validation
-
 ### **Implementation Success**
 - Meeting milestone deadlines and requirements
 - Functional demonstration of core features

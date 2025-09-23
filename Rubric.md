@@ -38,8 +38,8 @@ Upon completion, the student will be able to:
 
 ### Phase 2: Core Intelligence Engine (Weeks 3-6)  
 
-| Component | Description | Due Week |
-|-----------|-------------|----------|
+| Component | Description |
+|-----------|-------------|
 | **Repository Analysis Engine** | GitHub integration with code parsing, basic security vulnerability detection using Semgrep API, and code quality metrics |
 | **AI Documentation Generator** | LLM integration (Claude or Vertex AI) for generating documentation from code analysis, with template system and quality scoring |
 | **Natural Language CLI Interface** | MCP server with natural language query processing: "What security issues exist?", "Generate docs for this module" |

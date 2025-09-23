@@ -17,7 +17,6 @@ Upon completion, the student will be able to:
 3. Develop natural language interfaces for developer workflow automation
 4. Integrate multiple data sources (repositories, YAML configs, documentation) into unified intelligence systems
 5. Evaluate and optimize system performance, security, and developer experience
-6. Create business-viable software solutions with clear value propositions and revenue models
 
 ## Project Components & Milestones
 
@@ -54,12 +53,10 @@ Upon completion, the student will be able to:
 
 | Component | Description |
 |-----------|-------------|
-| **YAML/Configuration Analysis** | Docker Compose and Kubernetes YAML parsing with security analysis and documentation generation |
 | **Cross-Reference Intelligence** | System to correlate findings across different source types (code ↔ infrastructure ↔ documentation) |
 | **Advanced Query Capabilities** | Enhanced CLI supporting complex queries: "Analyze this docker-compose for security issues and generate deployment docs" |
 
 **Success Criteria:**
-- Analyze Docker Compose files for security misconfigurations
 - Generate infrastructure documentation from YAML files
 - Demonstrate relationships between application code and deployment configuration
 
@@ -85,6 +82,54 @@ Upon completion, the student will be able to:
 | **Week 9** | System testing complete | Performance benchmarks, cost analysis, and security validation done on production GCP deployment |
 | **Week 10** | Final presentation ready | Complete demo, documentation, and business case prepared with live cloud demonstration |
 
+## Required Training & Preparation
+
+### **Pre-Project Learning Requirements**
+Before beginning development, the student must complete the following training modules to ensure adequate preparation for the technical requirements.
+
+#### **API Documentation & Integration (Week 0-1)**
+| Resource | Focus Area | Estimated Time |
+|----------|------------|----------------|
+| **GitHub API Documentation** | Repository access, authentication, REST API endpoints | 4-6 hours |
+| **Semgrep API Documentation** | Security scanning integration, rule configuration, result parsing | 3-4 hours |
+| **Anthropic Claude API Documentation** | LLM integration, prompt engineering, cost management | 3-4 hours |
+| **API Integration Best Practices** | Error handling, rate limiting, authentication patterns | 2-3 hours |
+
+#### **Google Cloud Platform Training (Week 0-1)**
+| Course/Resource | Focus Area | Estimated Time |
+|-----------------|------------|----------------|
+| **Google Cloud Fundamentals** | Core concepts, account setup, billing management | 4-5 hours |
+| **Cloud Run Quickstart** | Serverless deployment, container basics, CI/CD setup | 3-4 hours |
+| **Firestore Getting Started** | NoSQL database, data modeling, security rules | 2-3 hours |
+| **Secret Manager Tutorial** | API key management, secure configuration | 1-2 hours |
+| **Cloud Build Documentation** | Automated deployment, build triggers, Docker integration | 2-3 hours |
+
+#### **MCP Server Development (Week 0-2)**
+| Resource | Focus Area | Estimated Time |
+|----------|------------|----------------|
+| **Anthropic Introduction to MCP Servers** | MCP protocol fundamentals, server architecture, basic implementation | 4-6 hours |
+| **Advanced MCP Server Development** | Complex integrations, natural language processing, production deployment | 6-8 hours |
+| **MCP Server Best Practices** | Security, scalability, error handling, testing strategies | 3-4 hours |
+
+#### **Supporting Technologies (Ongoing)**
+| Resource | Focus Area | Estimated Time |
+|----------|------------|----------------|
+| **Python AST Module Documentation** | Code parsing, syntax tree manipulation | 2-3 hours |
+| **Tree-sitter Documentation** | Advanced code parsing, multi-language support | 2-3 hours |
+| **Docker Fundamentals** | Containerization, deployment, best practices | 3-4 hours |
+
+### **Training Schedule Integration**
+- Complete API documentation research and Google Cloud fundamentals
+- Complete MCP server introduction while setting up development environment
+- Advanced MCP server training alongside architecture design
+- **Ongoing**: Reference supporting technology documentation as needed during implementation
+
+### **Training Validation**
+Students must demonstrate competency by:
+- Successfully completing Google Cloud account setup with basic service deployment
+- Implementing simple API calls to GitHub, Semgrep, and Claude APIs
+- Deploying a basic "Hello World" MCP server to Cloud Run
+- Documenting key learnings and architecture decisions from training modules
 ## Technical Specifications
 
 ### **Minimum Viable Product Requirements:**
@@ -99,7 +144,7 @@ Upon completion, the student will be able to:
 - Mermaid diagram analysis and documentation generation
 - GitLab/Bitbucket integration
 - Custom security rule configuration
-
+- Docker compose parsing 
 ## Evaluation Criteria
 
 ### **Technical Excellence**
@@ -149,6 +194,5 @@ Upon completion, the student will be able to:
 1. **Production MCP Server** - Deployed on Google Cloud Run with full functionality and monitoring
 2. **Cloud Infrastructure Documentation** - GCP setup guide, deployment procedures, and cost analysis
 3. **Technical Documentation** - Architecture, API docs, deployment guide, and cloud operations manual
-4. **Business Case Report** - Market analysis, revenue model, growth strategy, and cloud scaling plan
 5. **Live Demonstration** - Showcase of key features using production cloud deployment
 6. **Source Code Repository** - Clean, documented, and reproducible code with automated deployment pipeline

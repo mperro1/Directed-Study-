@@ -8,14 +8,15 @@
 - **Supervising Faculty:** Albert Lionelle
 
 ## Study Overview
-This directed study focuses on researching, implementing, and evaluating a comprehensive Secure Code Review MCP Server that combines automated security analysis, code quality assessment, and vulnerability detection for software repositories and infrastructure configurations.
+This directed study explores the local and cloud deployment of MCP servers, focusing on evaluating available MCP server implementations and leveraging AI to develop customized MCP solutions. The study includes hands-on experimentation with Docker-based MCP tools, Google ADK, and other MCP server management platforms. Evaluation centers on performance, scalability, and security trade-offs, with an MCP prototype implemented and tested in both local and cloud environments to assess how infrastructure impacts system efficiency
 
-## Learning Objectives
-Upon completion, the student will be able to:
-1. Demonstrate comprehensive understanding of MCP server architecture and integration patterns
-2. Design and implement AI-powered code analysis systems using existing security and analysis APIs
-3. Integrate multiple data sources (repositories, YAML configs, documentation) into unified intelligence systems
-4. Evaluate and optimize system performance, security, and developer experience
+## Objectives
+1. Designing and implementing MCP servers according to industry standards.
+2. Hosting servers on both local hardware and in a cloud environment.
+3. Testing containerized MCP servers.
+4. Utilizing custom prompts / AI-driven tooling to deploy an MCP server.
+5. Comparing scalability, latency, and maintenance requirements for each deployment.
+6. Measuring the cost, reliability, and security of each hosting approach for representative AI application use cases.
 
 ## Project Components & Milestones
 
@@ -34,51 +35,31 @@ Upon completion, the student will be able to:
 - Fully operational GCP project with deployed "Hello World" MCP server
 - Functional development environment with cloud deployment pipeline working
 
-### Phase 2: Core Intelligence Engine (Weeks 3-6)  
+### Phase 2: Implementation of MCP Servers Using Claude Desktop 
+1. Install and configure Claude Desktop MCP integrations.
+2. Install and test Filesystem MCP
+3. Document setup steps, configuration details, and initial evaluations.
+4. Establish baseline understanding of MCP communication, capabilities, and limitations.
 
-| Component | Description |
-|-----------|-------------|
-| **Repository Analysis Engine** | GitHub integration with code parsing, basic security vulnerability detection using Semgrep API, and code quality metrics |
-| **Natural Language CLI Interface** | MCP server with natural language query processing: "What security issues exist?", "Generate docs for this module" |
+### Phase 3: Google ADK & Cloud-Hosted MCP Deployment
+1. Deploy MCP servers using Google ADK (Application Developer Kit) or relevant cloud tooling.
+2. Configure cloud networking, IAM security layers, firewall rules, and service endpoints.
+3. Measure cloud-specific metrics (latency, cost, autoscaling behavior, reliability).
+4. Compare cloud hosting vs. local hosting in terms of cybersecurity, cost, and maintainability.
 
-**Technical Requirements:**
-- Support for 1 programming languages (Python)
-- Integration with GitHub REST API with proper authentication
-- Security analysis using existing APIs (Semgrep free tier)
+### Phase 4: Custom MCP Server Development Using AI-Driven Prompt Engineering
+1. Design and implement a custom MCP server using AI as a development assistant.
+2. Apply prompt-engineering strategies to generate, refine, and optimize server logic.
+3. Integrate additional custom tools, capabilities, or endpoints into the MCP server.
+4. Evaluate how AI-assisted development impacts speed, accuracy, and functionality.
+5. Document all tooling, prompts, and architectural decisions.
 
-### Phase 3: Advanced Code Review (Weeks 7-8)
-
-| Component | Description |
-|-----------|-------------|
-| **Enhaned Security Analysis** | Implement deeper code review capabilities to detect complex vulnerabilities and patterns |
-| **Advanced Query Capabilities** | Enhanced CLI supporting complex queries: "List all high-severity vulnerabilities across the repository |
-
-**Success Criteria:**
-- Identify and classify advanced security vulnerabilities
-- Provide detailed remediation suggestions for code issues 
-
-### Phase 4: Polish & Testing (Weeks 9-10)
-
-| Deliverable | Description | 
-|-------------|-------------|
-| **System Performance & Security Testing** | Load testing, security audit of API integrations, cost analysis of external service usage |
-| **Final Demonstration & Report** | Working demo presentation, comprehensive technical documentation, user guide, report |
-| **Reflection** | Week 10 written reflection on project progress, lessons learned, and future directions |
-
-## Weekly Milestone Checkpoints
-
-| Week | Key Milestone | Success Metric |
-|------|---------------|----------------|
-| **Week 1** | Scope Refinement and GCP Project setup | Can deploy and access MCP server on Cloud Run with "Hello World" functionality | Refined Scope Document |
-| **Week 2** | Architecture finalized and GitHub integration | Clear technical specification and successful GitHub API connection through deployed server |
-| **Week 3** | Basic code analysis working | Can identify functions/classes in repository and detect simple security issues via cloud-deployed server |
-| **Week 4** | Security integration complete | Semgrep API integration working with meaningful vulnerability detection |
-| **Week 5** | Extended vulnerability analysis | Ability to classify vulnerabilities by severity and suggest remediation strategies |
-| **Week 6** | CLI interface polished | Natural language queries working reliably through Cloud Run endpoint |
-| **Week 7** | Advanced security analysis implemented | Enhanced vulnerability detection with detailed remediation suggestions and risk scoring |
-| **Week 8** | Performance optimization complete | Production-ready system with caching, cost monitoring, and scalability improvements |
-| **Week 9** | System testing complete | Performance benchmarks, cost analysis, and security validation done on production GCP deployment |
-| **Week 10** | Final presentation, report, and reflection | Live cloud demonstration, written report, and reflection |
+### Phase 5: Final Report, Reflection, and Demonstration
+1. Compile all results from local, Docker-based, and cloud-based experiments.
+2. Provide a comparative analysis of scalability, performance, cost, reliability, and security.
+3. Reflect on challenges, lessons learned, and recommendations for MCP deployments.
+4. Prepare and deliver the final demonstration of all MCP implementations.
+5. Submit complete documentation, including diagrams, metrics, and code references.
 
 ## Required Training & Preparation
 
@@ -92,6 +73,7 @@ Before beginning development, the student must complete the following training m
 | **Semgrep API Documentation** | Security scanning integration, rule configuration, result parsing | 3-4 hours |
 | **Anthropic Claude API Documentation** | LLM integration, prompt engineering, cost management | 3-4 hours |
 | **API Integration Best Practices** | Error handling, rate limiting, authentication patterns | 2-3 hours |
+| **Docker Documentation** | 
 
 #### **Google Cloud Platform Training (Week 0-1)**
 | Course/Resource | Focus Area | Estimated Time |
@@ -124,7 +106,7 @@ Before beginning development, the student must complete the following training m
 ### **Training Validation**
 Students must demonstrate competency by:
 - Successfully completing Google Cloud account setup with basic service deployment
-- Implementing simple API calls to GitHub, Semgrep, and Claude APIs
+- Implementing simple API calls to GitHub, and Claude APIs
 - Deploying a basic "Hello World" MCP server to Cloud Run
 - Documenting key learnings and architecture decisions from training modules
 ## Technical Specifications
@@ -136,14 +118,7 @@ Students must demonstrate competency by:
 - **Infrastructure Analysis:** Docker Compose security and documentation
 - **CLI Interface:** Natural language query processing via MCP
 
-### **Advanced Features (if ahead of schedule):**
-- Multiple programming language support (beyond initial)
-- Mermaid diagram analysis and documentation generation
-- GitLab/Bitbucket integration
-- Custom security rule configuration
-- Docker compose parsing 
 ## Evaluation Criteria
-
 ### **Technical Excellence**
 - Code quality, architecture, and documentation
 - Proper use of APIs and external services
@@ -156,31 +131,11 @@ Students must demonstrate competency by:
 - User experience and interface design
 - Problem-solving and adaptation to challenges
 
-## Resources & Budget
-
-### **Cloud Infrastructure Budget:** 
-**Google Cloud Platform:**
-- Cloud Run hosting
-- Cloud Storage
-- Secret Manager
-- Cloud Build CI/CD
-- **Total GCP**: Covered entirely by $300 GCP credit 
-
-**External API Usage:**
-- GitHub API: Free tier
-- Semgrep API: Free tier (100k lines/month)
-- Docker Hub API: Free tier
-
-### **Development Tools:**
-- Google Cloud SDK and CLI tools
-- Python for MCP server implementation
-- GitHub for version control and CI/CD integration
-- Postman or similar for API testing
 
 ## Final Deliverables
 
-1. **Production MCP Server** - Deployed on Google Cloud Run with full functionality and monitoring
-2. **Technical Report** - Covering architecture, API integrations, findings and evaluation
+1. **Production MCP Server** - Deployed on locally or on cloud Run with full functionality and monitoring
+2. **Technical Report** - Covering architecture, MCP architecture, findings and evaluation
 3. **Live Demonstration** - Showcase of key features using production cloud deployment
 4. **Source Code Repository** - Clean, documented, and reproducible code with automated deployment pipeline
-5. **Reflection** - Written reflection in Week 10 summarizing lessons learned
+5. **Reflection** - Written reflection summarizing lessons learned

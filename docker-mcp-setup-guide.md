@@ -1,6 +1,5 @@
 # Docker-mcp-setup-guide
 
-
 ## Prerequisites Check (30 seconds)
 
 **Docker Desktop** installed and running  
@@ -68,14 +67,3 @@ Add this configuration (replace `[YOUR_USERNAME]` with your actual username):
 3. Click the tools icon (or press Cmd/Ctrl+I)
 4. You should see "mcp-docker" with all the available tools that you can select 
 
-## 🎉 Success!
-
-## Troubleshooting
-
-**Tools not appearing?**
-- Make sure Docker Desktop is running
-- Verify the Docker image built successfully: `docker images \
-- Check Claude logs: Help → Show Logs
-
-**Permission errors?**
-- Make sure Docker Desktop has necessary permissions

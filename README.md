@@ -49,7 +49,8 @@ It doesnt use HTTP routes, no REST endpoints, no URL parameters. Just structured
 4. The gateway routes the request to the correct MCP server/servers. The gateway maintains and updates the context state across calls, enabling multi-step and multi-server workflows. The gateway logs this transaction.
 5. The MCP server processes the request and creates an MCP-compliant response, adding metadata and updated context.
 
-Often times, the MCP gateway gets confused with the MCP proxy. The MCP proxy is a simpler component that acts like a messenger taking requests from the client and then sending the to the right MCP server. The key difference is that a proxy gives lightweight, fast connectivity and flexible bridging between local and remote environments, while a gateway adds governance, compliance, and visibility on top of that connectivity, making it better suited for enterprise-wide, multi-team deployments.
+Often times, the MCP gateway gets confused with the MCP proxy. The MCP proxy is a simpler component that acts like a messenger taking requests from the client and then sending the to the right MCP server. The key difference is that a proxy gives lightweight, fast connectivity and flexible bridging between local and remote environments, while a gateway adds governance, compliance, and visibility on top of that connectivity, making it better suited for enterprise-wide, multi-team deployments. These do not need to be implemented simultaneously. For example, a developer running local MCP servers inside a desktop client often skip gateways or dedicated proxies entirely, while larger or multi-team enterprise environments typically introduce them later to manage scale, governance, and remote access.
+
 ### Why does MCP doesn't use APIs? 
 The API defines what endpoints you can call and how you can call, and then you get a response back. There is a wide variety of ways to do it. Multiple protocols or formats cam be used, you could get resonses back in JSON, or XML. 
 
@@ -93,4 +94,7 @@ Docker MCP gateway differs in the way we dont need to modify out client’s conf
 To-DO 
 
 ## Conclusion 
+Overall, this directed study shows that MCP is a powerful and a reasonable option for enterprise AI integration. It offers a standardized, self describing protocol that simplifies tool discovery, and I can see it reducing the overhead of traditional API-based development. MCP gateways ith their built-in governance, auditing, and context management, make them better suited for large organizations that need centralized control across many teams, while MCP proxies offer lighter, faster connectivity for remote or distributed deployments. Although MCP is highly promising, enterprise adoption still faces challenges: running MCP servers or gateways on local user workstations introduces security risks, operational inconsistency, and maintenance burdens; the protocol’s evolving authorization model and risk of unsafe tool. 
+Containerized deployments in platforms like Docker mitigate many of these issues by offering isolation, centralized configuration, and reproducibility, and cloud environments further improve scalability and reliability. In conclusion, MCP is well-positioned for enterprise use—especially in controlled, containerized, or cloud-managed settings but organizations must account for its current limitations and operational complexities when deploying it across their environments.
+
 ## References 

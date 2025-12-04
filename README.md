@@ -31,8 +31,7 @@ The scope of this project includes:
 ### The Client
 The LLM itself. ChatGPT, Claude. 
 ### The Gateway & Flow 
-We can think of the gateway as a middle man that sits between the client and the server. It receives the request, runs the tools, and sends back results in a format the client understands. 
-Run the mcp on an end users workstation, needs filesystem access.
+We can think of the gateway as a middle man that sits between the client and the server. It receives the request, runs the tools, and sends back results in a format the client understands utilizing stdin/stdout pipes. 
 
 How the flow works: 
 1. The MCP client, creates a structured JSON payload that includes the tool to invoke, parameters, context, metadata such as authentication tokens, session data. 
@@ -54,7 +53,7 @@ Often times, the MCP gateway gets confused with the MCP proxy. The MCP proxy is 
 ### Why does MCP doesn't use APIs? 
 The API defines what endpoints you can call and how you can call, and then you get a response back. There is a wide variety of ways to do it. Multiple protocols or formats cam be used, you could get resonses back in JSON, or XML. 
 
-MCP is different because it is more dynamic. The documentation for a tool is not something you read in advance; instead, it is sent automatically during the handshake that happens when the connection starts.
+MCP is different because it is more dynamic. The documentation for a tool is not something you read in advance; instead, it is sent automatically during the handshake that happens when the connection starts. 
 
 Analogy: With MCP, you don’t read documentation and then write code that calls the documented API. That’s how traditional API integrations work: you study the docs, then tailor your code to match them.
 MCP solves this differently—its documentation comes through the wire. The AI receives tool descriptions as part of the connection itself, so MCP becomes “documentation + invocation” packaged together.
@@ -87,11 +86,29 @@ MCP servers are packaged as containers. This allows to just run a container rath
 How the process works is the client connects to each configured MCP server. When prompting we can specify which tool or server to use. Then the client will query its available tools/capabilities to process, interacts with external systems if needed, and returns the result in natural language. 
 
 Docker MCP architecture allows for strong security and isolation. Every time we run an MCP server with docket its going to run the mcp gateway and then run the specific mcp server. Using standard input and output and JSON RPC is changed through pipes. No need for network overhead. 
+Example of running an MCP server tool and verifying a container is running simultaneously. 
+![container triggered](image-3.png) 
 
 Docker MCP gateway differs in the way we dont need to modify out client’s config for each service we run. The gateway comes in as docker, and we can configure multiple servers in docker providing secure, centralized management configuration so instead of having to configure multiple services per client, we only configure one connection that gives us access to a lot of other mcp servers. It is a lot cleaner and easier to keep track and maintain. 
 
 ## Remote MCP Architecture 
-To-DO 
+When an MCP server is hosted remotely rather than a local machine, the protocol shifts away from stdin/stdout pipes and instead uses standard web technologies for transport.
+When the client sends requests to the remote MCP server, it does so over HTTPS where MCP JSON messages are sent inside encrypted POST requests, and authentication is enforced through mechanisms such as API keys, OAuth tokens, or service credentials. This makes remote MCP behave a lot like a typical web application backend.
+
+Remote MCP deployment mirrors the structure of a typical HTTP server:
+1. A public https endpoint 
+2. Authentication layer 
+3. Load balancer 
+4. Firewall/ vpc security rules 
+
+### Difference between remote MCP and local 
+| Category     | Local MCP                                    | Remote MCP                                      |
+|--------------|-----------------------------------------------|--------------------------------------------------|
+| **Transport** | stdio pipes, Unix sockets, WebSockets         | HTTPS for client → server, SSE for server → client |
+| **Setup**     | Runs directly on a user’s workstation         | Deployed like a cloud/web service                 |
+| **Security**  | Relies on local OS permissions                | Uses cloud security layers (TLS, IAM, OAuth, VPC rules) |
+| **Complexity**| Simple to run; minimal infrastructure         | Requires infrastructure + DevOps maintenance      |
+| **Uses**      | Personal tools, local filesystem access       | Enterprise systems, shared services, scalable workloads |
 
 ## Conclusion 
 Overall, this directed study shows that MCP is a powerful and a reasonable option for enterprise AI integration. It offers a standardized, self describing protocol that simplifies tool discovery, and I can see it reducing the overhead of traditional API-based development. MCP gateways ith their built-in governance, auditing, and context management, make them better suited for large organizations that need centralized control across many teams, while MCP proxies offer lighter, faster connectivity for remote or distributed deployments. Although MCP is highly promising, enterprise adoption still faces challenges: running MCP servers or gateways on local user workstations introduces security risks, operational inconsistency, and maintenance burdens; the protocol’s evolving authorization model and risk of unsafe tool. 

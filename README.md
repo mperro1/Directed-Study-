@@ -28,7 +28,8 @@ The scope of this project includes:
 - User Experience and Transparency Challenges: For many non-technical users, the sequence of tools and resources invoked through MCP can be difficult to understand. When the system reports something like “Calling Tool X with argument Y,” the user may not realize what data is being accessed, where it is being sent, or who might gain visibility into it. This lack of clarity can undermine trust and raise privacy concerns.
 
 ## Parts of MCP Architecture: 
-### The Client: 
+### The Client
+The LLM itself. ChatGPT, Claude. 
 ### The Gateway & Flow 
 We can think of the gateway as a middle man that sits between the client and the server. It receives the request, runs the tools, and sends back results in a format the client understands. 
 Run the mcp on an end users workstation, needs filesystem access.
@@ -48,19 +49,40 @@ It doesnt use HTTP routes, no REST endpoints, no URL parameters. Just structured
 4. The gateway routes the request to the correct MCP server/servers. The gateway maintains and updates the context state across calls, enabling multi-step and multi-server workflows. The gateway logs this transaction.
 5. The MCP server processes the request and creates an MCP-compliant response, adding metadata and updated context.
 
+Often times, the MCP gateway gets confused with the MCP proxy. The MCP proxy is a simpler component that acts like a messenger taking requests from the client and then sending the to the right MCP server. The key difference is that a proxy gives lightweight, fast connectivity and flexible bridging between local and remote environments, while a gateway adds governance, compliance, and visibility on top of that connectivity, making it better suited for enterprise-wide, multi-team deployments.
 ### Why does MCP doesn't use APIs? 
 The API defines what endpoints you can call and how you can call, and then you get a response back. There is a wide variety of ways to do it. Multiple protocols or formats cam be used, you could get resonses back in JSON, or XML. 
-MCP is different, its more dynamic. The documentation happens as part of that handshake that happens at the beginning. 
-analogy: MCP is not documentation, then you write code that calls documentation in comparison of writing an api integration, where you read the code, and then tailor the code based on that documentation. MCP solves it by having the documentaiton come thru the wire tje AI has access to the documentation (context) so the MCP comes out to be as documentation + invocation. One package. What happens in an MCP connection, we have the handshake where the server is called by the client "I am claude verion x and I support these things. the server will respond "hello I am pupeeteer version x and include a list of tools, then the client will say tell me more about these tools, and then the server will respond with the set of tools. This is not what traditional APIs are like, and where the distinction comes from. 
-![alt text](image.png) [MCP Manager]
-### Difference between an MCP gateway and MCP Proxy
-### The Server: 
+
+MCP is different because it is more dynamic. The documentation for a tool is not something you read in advance; instead, it is sent automatically during the handshake that happens when the connection starts.
+
+Analogy: With MCP, you don’t read documentation and then write code that calls the documented API. That’s how traditional API integrations work: you study the docs, then tailor your code to match them.
+MCP solves this differently—its documentation comes through the wire. The AI receives tool descriptions as part of the connection itself, so MCP becomes “documentation + invocation” packaged together.
+
+Here’s what happens during an MCP connection:
+
+The client connects and says:
+“I am Claude version X, and I support these capabilities.”
+
+The server responds:
+“Hello, I am Puppeteer version X, and here is the list of tools I provide.”
+
+The client then asks for details about those tools.
+
+The server replies with a set of tools and descriptions.
+
+This interaction model is very different from traditional APIs, and that’s where the distinction comes from. MCP tools are self-describing and discovered dynamically, instead of requiring human-written documentation and manual integration work.
+
+![REST APIs vs. MCP](image.png)
+
+### The Server
+The piece that processes requests, keeps track of ongoing conversations or tasks, and coordinates with other tools or services as needed routed by the MCP gateway. It coordinates with back-end tools, data sources, and other services, then packages the result in a form the client can use.
 
 ## Containeraized MCP Architechture 
 MCP servers are packaged as containers. This allows to just run a container rather than spending time installing dependencies and configuring the runtime. Docker MCP allows the selection of an MCP client. For this assignment, I am using Claude desktop to serve as the interface to talk to the MCP servers I’ve installed through Docker Desktop. There are multiple MCP clients to select from. These MCP servers provide capabilities like accessing files, databases, creating custom servers, typically using JSON over either local (stdio) or remote (HTTP) transports. 
 
-Figure 1 
-Figure 2 
+![MCP architectue without containers](image-2.png)
+![MCP architecture using docker containers ](image-1.png)
+
 How the process works is the client connects to each configured MCP server. When prompting we can specify which tool or server to use. Then the client will query its available tools/capabilities to process, interacts with external systems if needed, and returns the result in natural language. 
 
 Docker MCP architecture allows for strong security and isolation. Every time we run an MCP server with docket its going to run the mcp gateway and then run the specific mcp server. Using standard input and output and JSON RPC is changed through pipes. No need for network overhead. 

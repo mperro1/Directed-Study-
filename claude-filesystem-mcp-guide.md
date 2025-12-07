@@ -38,4 +38,6 @@ Replace /path/to/allowed/files with the directory you want Claude to access.
 }
 ```
 
+Example run for this project: 
+![alt text](image-3.png)
 For other example servers see: https://modelcontextprotocol.io/examples

@@ -54,14 +54,13 @@ If the topic contains keywords such as "computer", "cs", "algorithm", "data stru
 ![alt text](image-1.png)
 ```json
 LEARNING RESOURCES - COMPUTER SCIENCE ALGORITHMS SEQUENTIAL THINKING
-============================================================
 
 VIDEO RESOURCES:
   - Khan Academy Science - Biology, Chemistry, Physics courses
   - CrashCourse (YouTube) - Fast-paced, engaging science videos
   - MIT OpenCourseWare - Free college-level lectures
 
-============================================================
+
 GENERAL STUDY STRATEGIES:
 1. Set specific goals for each study session
 2. Eliminate distractions (phone, TV, etc.)
@@ -79,7 +78,6 @@ Adding more context to the server for Computer Science topics:
 ```json
 STUDY QUESTIONS - DATA STRUCTURES AND ALGORITHMS
 Difficulty: Hard
-============================================================
 
 Question 1:
 What is the difference between stack and heap memory?
@@ -130,7 +128,6 @@ D) A debugging tool
 Answer: A) Describes algorithm efficiency
 Explanation: Big O describes time/space complexity (e.g., O(n), O(log n), O(n²))
 
-============================================================
 Study Tips:
 - Cover the answers and try to solve each question first
 - Review the explanations carefully

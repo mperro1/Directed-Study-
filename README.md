@@ -109,6 +109,42 @@ Remote MCP deployment mirrors the structure of a typical HTTP server:
 | **Complexity**| Simple to run; minimal infrastructure         | Requires infrastructure + DevOps maintenance      |
 | **Uses**      | Personal tools, local filesystem access       | Enterprise systems, shared services, scalable workloads |
 
+### Custom Implementation 
+This README references several supporting files included in the repository to provide a complete understanding of how the custom MCP server was built, configured, and tested. All documentation along with the images and build files illustrates how the same MCP server implementation (study_server.py) can be used across multiple installation environments, including local execution, remote hosting, and Docker-based deployments. The docker-build-files directory contains the Dockerfile and dependency requirements used to containerize the server. Images included in the project visually demonstrate how the server registers and runs within different MCP clients. Together, these references form a complete guide for reproducing, modifying, or extending the Study Server MCP across any supported deployment method.
+
+## Folder Structure 
+```
+Custom-MCP/
+│ README.md
+│ study_server.py
+│ mcp-prompt-build.md
+│ Claude mcp servers installed .png
+│ image.png
+│ image-1.png
+│ image-2.png
+│
+└── docker-build-files/
+      ├── claude.md
+      ├── Dockerfile
+      └── requirements.txt
+```
+<details>
+  <summary><strong>Server Files, and prompt building</strong></summary>
+
+- [study_server.py](study_server.py)  
+- [mcp-prompt-build.md](mcp-prompt-build.md)
+
+</details>
+
+<details>
+  <summary><strong>Docker Build File Samples</strong></summary>
+
+- [claude.md](docker-build-files/claude.md)  
+- [Dockerfile](docker-build-files/Dockerfile)  
+- [requirements.txt](docker-build-files/requirements.txt)
+
+</details>
+
 ## Conclusion 
 Overall, this directed study shows that MCP is a powerful and a reasonable option for enterprise AI integration. It offers a standardized, self describing protocol that simplifies tool discovery, and I can see it reducing the overhead of traditional API-based development. MCP gateways ith their built-in governance, auditing, and context management, make them better suited for large organizations that need centralized control across many teams, while MCP proxies offer lighter, faster connectivity for remote or distributed deployments. Although MCP is highly promising, enterprise adoption still faces challenges: running MCP servers or gateways on local user workstations introduces security risks, operational inconsistency, and maintenance burdens; the protocol’s evolving authorization model and risk of unsafe tool. 
 Containerized deployments in platforms like Docker mitigate many of these issues by offering isolation, centralized configuration, and reproducibility, and cloud environments further improve scalability and reliability. In conclusion, MCP is well-positioned for enterprise use—especially in controlled, containerized, or cloud-managed settings but organizations must account for its current limitations and operational complexities when deploying it across their environments.
@@ -150,3 +186,23 @@ Retrieved from https://mcpmanager.ai/blog/mcp-gateway/#understand-mcp-gateways-w
 
 [13] Docker. 2025. The Rise of Model Context Protocol in Docker Desktop. Retrieved from https://dev.to/docker/the-rise-of-model-context-protocol-in-docker-desktop-4fji  
 
+[14] Model Context Protocol. n.d. Connect Local Servers. Retrieved from https://modelcontextprotocol.io/docs/develop/connect-local-servers
+
+[15] Model Context Protocol. n.d. Connect Remote Servers. Retrieved from https://modelcontextprotocol.io/docs/develop/connect-remote-servers
+
+[16] Model Context Protocol. n.d. Build Server – Quick Examples. Retrieved from https://modelcontextprotocol.io/docs/develop/build-server#quick-examples
+
+[17] Model Context Protocol. n.d. Authorization (Security Tutorial). Retrieved from https://modelcontextprotocol.io/docs/tutorials/security/authorization
+
+## Courses Taken 
+[18] Pluralsight. n.d. Getting Started on Prompt Engineering with Generative AI. Retrieved from https://www.pluralsight.com/courses/getting-started-prompt-engineering-generative-ai
+
+[21] Anthropic. n.d. Introduction to Model Context Protocol. Retrieved from https://anthropic.skilljar.com/introduction-to-model-context-protocol
+ 
+[22] Anthropic. n.d. Model Context Protocol: Advanced Topics. Retrieved from https://anthropic.skilljar.com/model-context-protocol-advanced-topics
+
+## Remote MCP tested - Implementation not included in this repository 
+[23] Google. n.d. google/mcp-security. GitHub repository. Retrieved from https://github.com/google/mcp-security
+
+## LLM disclosure 
+This project was developed with the assistance of several large language models (LLMs)—including ChatGPT, Perplexity, Gemini, and Claude Desktop—which were used for prompt engineering support, formatting guidance, and clarification of technical topics. All outputs generated by these models were directed through my own prompts, and I maintained full human oversight over the entire repository throughout development. Any code that was executed, reviewed, or integrated was manually inspected and validated by me, and all server installations were performed directly by hand. No autonomous coding agents or AI-driven development tools were used within Visual Studio Code or any other environment; all implementation decisions, modifications, and executions were performed solely under my own control and judgment.

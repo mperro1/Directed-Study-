@@ -51,8 +51,8 @@ count: "5"
 If the topic contains keywords such as "computer", "cs", "algorithm", "data structure", "coding", the server automatically switches to Computer Science question banks and resources. If insufficient context is provided, the server defaults to the closest match it detects. 
 
 ## Sample Run 
-![alt text](image-1.png)
-```json
+![alt text](sample-run.png)
+```
 LEARNING RESOURCES - COMPUTER SCIENCE ALGORITHMS SEQUENTIAL THINKING
 
 VIDEO RESOURCES:
@@ -74,8 +74,8 @@ GENERAL STUDY STRATEGIES:
 
 Adding more context to the server for Computer Science topics: 
 ```
-![alt text](image-2.png)
-```json
+![alt text](more-context-prompt.png)
+```
 STUDY QUESTIONS - DATA STRUCTURES AND ALGORITHMS
 Difficulty: Hard
 

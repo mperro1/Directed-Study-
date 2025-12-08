@@ -71,7 +71,7 @@ The server replies with a set of tools and descriptions.
 
 This interaction model is very different from traditional APIs, and that’s where the distinction comes from. MCP tools are self-describing and discovered dynamically, instead of requiring human-written documentation and manual integration work. [9,10]
 
-![REST APIs vs. MCP](image.png)
+![REST APIs vs. MCP](apivsmcp.png)
 
 ### The Server
 The piece that processes requests, keeps track of ongoing conversations or tasks, and coordinates with other tools or services as needed routed by the MCP gateway. It coordinates with back-end tools, data sources, and other services, then packages the result in a form the client can use.
@@ -79,14 +79,15 @@ The piece that processes requests, keeps track of ongoing conversations or tasks
 ## Containeraized MCP Architechture 
 MCP servers are packaged as containers. This allows to just run a container rather than spending time installing dependencies and configuring the runtime. Docker MCP allows the selection of an MCP client. For this assignment, I am using Claude desktop to serve as the interface to talk to the MCP servers I’ve installed through Docker Desktop. There are multiple MCP clients to select from. These MCP servers provide capabilities like accessing files, databases, creating custom servers, typically using JSON over either local (stdio) or remote (HTTP) transports. 
 
-![MCP architectue without containers](image-2.png)
-![MCP architecture using docker containers ](image-1.png)
+![MCP architectue without containers](without_containers.png)
+
+![MCP architecture using docker containers ](with_containers.png)
 
 How the process works is the client connects to each configured MCP server. When prompting we can specify which tool or server to use. Then the client will query its available tools/capabilities to process, interacts with external systems if needed, and returns the result in natural language. 
 
 Docker MCP architecture allows for strong security and isolation. Every time we run an MCP server with docket its going to run the mcp gateway and then run the specific mcp server. Using standard input and output and JSON RPC is changed through pipes. No need for network overhead. 
 Example of running an MCP server tool and verifying a container is running simultaneously. 
-![container triggered](image-3.png) 
+![container triggered](container_triggered.png) 
 
 Docker MCP gateway differs in the way we dont need to modify out client’s config for each service we run. The gateway comes in as docker, and we can configure multiple servers in docker providing secure, centralized management configuration so instead of having to configure multiple services per client, we only configure one connection that gives us access to a lot of other mcp servers. It is a lot cleaner and easier to keep track and maintain. [11,13]
 

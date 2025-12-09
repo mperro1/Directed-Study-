@@ -147,9 +147,9 @@ Custom-MCP/
 <details>
   <summary><strong>Docker Build File Samples</strong></summary>
 
-- [claude.md](Custom-MPC\docker-build-files\claude.md)  
-- [Dockerfile](Custom-MPC\docker-build-files\Dockerfile)  
-- [requirements.txt](Custom-MPC\docker-build-files\requirements.txt)
+- [claude.md](Custom-MPC/docker-build-files/claude.md)  
+- [Dockerfile](Custom-MPC/docker-build-files/Dockerfile)  
+- [requirements.txt](Custom-MPC/docker-build-files/requirements.txt)
 
 </details>
 

@@ -147,9 +147,17 @@ Custom-MCP/
 <details>
   <summary><strong>Docker Build File Samples</strong></summary>
 
-- [claude.md](Custom-MCP/docker-build-files/claude.md)  
+- [claude.md](Custom-MCP/docker-build-files/claude.md)
 - [Dockerfile](Custom-MCP/docker-build-files/Dockerfile)  
 - [requirements.txt](Custom-MCP/docker-build-files/requirements.txt)
+
+</details>
+
+<details>
+  <summary><strong>MCPs Intalled</strong></summary>
+
+- [Claude Filesystem](claude-filesystem-mcp-guide.md)
+- [Docker set-up guide](docker-mcp-setup-guide.md)  
 
 </details>
 

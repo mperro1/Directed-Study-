@@ -1,4 +1,5 @@
-# Study Helper MCP Server - Implementation Guide
+# Study Helper MCP Server - Implementation Guide 
+This is the output README from the prompt. 
 
 ## Overview
 This MCP server helps students study by generating practice questions and suggesting learning resources. It runs entirely offline with hardcoded educational content - no external APIs or keys required.

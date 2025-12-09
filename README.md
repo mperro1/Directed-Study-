@@ -139,17 +139,17 @@ Custom-MCP/
 <details>
   <summary><strong>Server Files, and prompt building</strong></summary>
 
-- [study_server.py](C:\Users\Marcela\Documents\MSCS\Fall 2025\Directed Study\Directed-Study-\Custom-MCP\mcp-prompt-build.md)  
-- [mcp-prompt-build.md](../Custom-MPC/mcp-prompt-build.md)
+- [study_server.py](../Custom-MCP\study_server.py)  
+- [mcp-prompt-build.md](Custom-MCP\mcp-prompt-build.md)
 
 </details>
 
 <details>
   <summary><strong>Docker Build File Samples</strong></summary>
 
-- [claude.md](Custom-MPC/docker-build-files/claude.md)  
-- [Dockerfile](Custom-MPC/docker-build-files/Dockerfile)  
-- [requirements.txt](Custom-MPC/docker-build-files/requirements.txt)
+- [claude.md](Custom-MPC\docker-build-files\claude.md)  
+- [Dockerfile](Custom-MPC\docker-build-files\Dockerfile)  
+- [requirements.txt](Custom-MPC\docker-build-files\requirements.txt)
 
 </details>
 

@@ -139,25 +139,25 @@ Custom-MCP/
 <details>
   <summary><strong>Server Files, and prompt building</strong></summary>
 
-- [study_server.py](Custom-MCP/study_server.py)  
-- [mcp-prompt-build.md](Custom-MCP/mcp-prompt-build.md)
+- [study_server.py](Custom-MCP/study_server.py)  Actual server 
+- [mcp-prompt-build.md](Custom-MCP/mcp-prompt-build.md) Instructions on how to build a prompt to create a custom server 
 
 </details>
 
 <details>
   <summary><strong>Docker Build File Samples</strong></summary>
 
-- [claude.md](Custom-MCP/docker-build-files/claude.md)
-- [Dockerfile](Custom-MCP/docker-build-files/Dockerfile)  
-- [requirements.txt](Custom-MCP/docker-build-files/requirements.txt)
+- [claude.md](Custom-MCP/docker-build-files/claude.md) README outputted by prompt. Named it claude.md to avoid confusion
+- [Dockerfile](Custom-MCP/docker-build-files/Dockerfile) Docker instructions for container image 
+- [requirements.txt](Custom-MCP/docker-build-files/requirements.txt) System requirements to run the MCP server 
 
 </details>
 
 <details>
   <summary><strong>MCPs Intalled</strong></summary>
 
-- [Claude Filesystem](claude-filesystem-mcp-guide.md)
-- [Docker set-up guide](docker-mcp-setup-guide.md)  
+- [Claude Filesystem](claude-filesystem-mcp-guide.md) guide on how to install filesystem MCP with Claude Desktop 
+- [Docker set-up guide](docker-mcp-setup-guide.md) guide on how to install an MCP from Docker desktop catalog 
 
 </details>
 

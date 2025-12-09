@@ -139,8 +139,8 @@ Custom-MCP/
 <details>
   <summary><strong>Server Files, and prompt building</strong></summary>
 
-- [study_server.py](../Custom-MCP\study_server.py)  
-- [mcp-prompt-build.md](Custom-MCP\mcp-prompt-build.md)
+- [study_server.py](Custom-MCP/study_server.py)  
+- [mcp-prompt-build.md](Custom-MCP/mcp-prompt-build.md)
 
 </details>
 
